@@ -81,3 +81,7 @@ code {
   font-weight: bolder;
   cursor: pointer;
 }
+
+.sign-in-and-sign-up {
+  max-width: 1400px;
+}

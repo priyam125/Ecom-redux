@@ -20,7 +20,7 @@ const Login = () => {
   };
 
   return (
-    <div className="w-1/3">
+    <div className="w-2/5">
       <div className="text-4xl font-bold mb-6">I already have an account</div>
       <span className="">Sign in with your email and password</span>
 
