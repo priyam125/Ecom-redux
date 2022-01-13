@@ -6,11 +6,15 @@ import { Route, Switch } from 'react-router-dom'
 import { auth, createUserProfileDocument } from './firebase/Firebase.util';
 import Header from './pages/Header';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { SET_CURRENT_USER } from './redux/user/userActions'
 
 
-function App() {
+const App = () => {
 
   const [currentUser, setCurrentUser] = useState(null)
+
+  const dispatcher = useDispatch()
 
   const unsubscribeFromAuth = null
 
@@ -22,14 +26,18 @@ function App() {
         const userRef = await createUserProfileDocument(userAuth)
 
         userRef.onSnapshot( snapshot => {
-          setCurrentUser({
-            id: snapshot.id,
-            ...snapshot.data()
+          dispatcher({
+            type: SET_CURRENT_USER,
+            payload: {currentUser: {id: snapshot.id,
+              ...snapshot.data()}}
           })
 
           console.log('User added');
         })
-      } else setCurrentUser(null)    
+      } else dispatcher({
+        type: SET_CURRENT_USER,
+        payload: {currentUser: null}
+      })    
 
     })
   },[])
@@ -43,7 +51,7 @@ function App() {
 
   return (
     <div>
-      <Header currentUser={currentUser}/>
+      <Header/>
       <Switch>
         <Route exact path = '/' component={Homepage} />
         <Route exact path = '/shop' component={ShopPage} />
