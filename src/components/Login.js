@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { signInWithGoogle } from "../firebase/Firebase.util";
+import { auth, signInWithGoogle } from "../firebase/Firebase.util";
 
 const Login = () => {
   const initialData = {
@@ -11,7 +11,12 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setFormData(initialData);
+    const { email, password } = formData
+
+    auth.signInWithEmailAndPassword(email, password)
+      .then(() =>setFormData(initialData))
+      .catch(error => console.log(error))
+
   };
 
   const handleChange = (e) => {
