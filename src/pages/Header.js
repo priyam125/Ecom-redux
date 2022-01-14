@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase/Firebase.util";
-
 import { ReactComponent as Logo } from "../assests/crown.svg";
-
 import { useSelector } from "react-redux";
 
-const Header = ({  }) => {
+import CartIcon from "../components/CartIcon";
+import CartDropdown from "../components/CartDropdown";
 
-  const currentUser = useSelector(state => state.user.currentUser)
+const Header = ({}) => {
+  const currentUser = useSelector((state) => state.user.currentUser);
+  const showCart = useSelector(state => state.cart.showCart)
   console.log(currentUser);
 
   return (
@@ -35,7 +36,9 @@ const Header = ({  }) => {
             SIGN IN
           </Link>
         )}
+        <CartIcon className="px-2 py-4 cursor-pointer" />
       </div>
+      {showCart ? <CartDropdown /> : null}
     </div>
   );
 };

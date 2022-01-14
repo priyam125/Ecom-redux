@@ -85,3 +85,8 @@ code {
 .sign-in-and-sign-up {
   max-width: 1400px;
 }
+
+.cart-icon {
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Open Sans', sans-serif;
+}
