@@ -1,7 +1,8 @@
-import { TOGGLE_CART } from "./cartActions";
+import { TOGGLE_CART, ADD_TO_CART } from "./cartActions";
 
  const INITIAL_STATE = {
-    showCart: false
+    showCart: false,
+    cartItems: []
 }
 
 const cartReducer = (state = INITIAL_STATE, action) => {
@@ -12,6 +13,14 @@ const cartReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 showCart: showCart
+            }
+        }
+        case ADD_TO_CART: {
+            const { cartItem } = action.payload
+            console.log(action.payload);
+            return {
+                ...state,
+                cartItems: [...state.cartItems, cartItem]
             }
         }
         default:

@@ -47,6 +47,7 @@ code {
   height: 350px;
 }
 
+
 .custom-button {
   min-width: 165px;
   max-width: 250px;
@@ -89,4 +90,28 @@ code {
 .cart-icon {
   /* font-family: 'Roboto', sans-serif; */
   font-family: 'Open Sans', sans-serif;
+}
+
+.add-to-cart-button {
+    min-width: 175px;
+    max-width: 250px;
+    width: auto;
+    height: 50px;
+    letter-spacing: 0.5px;
+    line-height: 50px;
+    padding: 0 35px 0 35px;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed';
+    font-weight: bolder;
+    cursor: pointer;
+    display: none;
+}
+
+.collection-item:hover .add-to-cart-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
