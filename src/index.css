@@ -115,3 +115,11 @@ code {
   justify-content: center;
   align-items: center;
 }
+
+.checkout-item {
+  width: 23%;
+}
+
+.checkoutItem-container {
+  min-height: 100px;
+}
