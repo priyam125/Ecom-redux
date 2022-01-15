@@ -7,7 +7,7 @@ import { addItemToCart } from "./cart.utils";
 }
 
 const cartReducer = (state = INITIAL_STATE, action) => {
-    console.log(action);
+    // console.log(action);
     switch (action.type) {
         case TOGGLE_CART: {
             const { showCart } = action.payload

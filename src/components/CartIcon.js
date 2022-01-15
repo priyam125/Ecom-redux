@@ -8,6 +8,16 @@ const CartIcon = () => {
   const showCart = useSelector((state) => state.cart.showCart);
   console.log(showCart);
 
+  const cartItems = useSelector(state => state.cart.cartItems)
+  console.log(cartItems);
+
+  const itemCount = cartItems.reduce((accumulator, currentValue) => {
+    // console.log(currentValue);
+    return accumulator + currentValue.quantity
+  }, 0)
+
+  console.log(itemCount);
+
   const dispatcher = useDispatch();
 
   const handleClick = () => {
@@ -25,7 +35,7 @@ const CartIcon = () => {
         style={{ fontWeight: "normal" }}
         className="relative w-8 h-8 font-light"
       />
-      <span className="cart-icon absolute font-bold text-sm mb-0.5">0</span>
+      <span className="cart-icon absolute font-bold text-sm mb-0.5">{itemCount}</span>
     </div>
   );
 };
