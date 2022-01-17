@@ -1,5 +1,5 @@
-import { TOGGLE_CART, ADD_TO_CART, REMOVE_FROM_CART } from "./cartActions";
-import { addItemToCart, removeItemFromCart } from "./cart.utils";
+import { TOGGLE_CART, ADD_TO_CART, REMOVE_FROM_CART, DECREASE_ITEM } from "./cartActions";
+import { addItemToCart, decreaseItemFromCart, removeItemFromCart,  } from "./cart.utils";
 
  const INITIAL_STATE = {
     showCart: false,
@@ -29,6 +29,13 @@ const cartReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 cartItems: removeItemFromCart(state.cartItems, removedItem)
+            }
+        }
+        case DECREASE_ITEM: {
+            const { itemToDecrease } = action.payload
+            return {
+                ...state,
+                cartItems: decreaseItemFromCart(state.cartItems, itemToDecrease)
             }
         }
         default:
