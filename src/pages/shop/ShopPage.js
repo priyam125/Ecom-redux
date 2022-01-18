@@ -1,12 +1,16 @@
 import React,{useState} from 'react'
-import SHOP_DATA from './ShopData'
+// import SHOP_DATA from './ShopData'
 import CollectionPreview from '../../components/CollectionPreview'
+import { useSelector } from 'react-redux'
 
 const ShopPage = ({match, history}) => {
 
+    const collections = useSelector(state => state.shop.collections)
+    console.log(collections);
+
     console.log(match);
     console.log(history);
-    const [collections, setCollections] = useState(SHOP_DATA)
+    // const [collections, setCollections] = useState(SHOP_DATA)
 
     return (
         <div className='py-8 px-12'>

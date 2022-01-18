@@ -18,7 +18,7 @@ const CollectionItem = ({item}) => {
 
   return (
     <div onFocus={() => {
-    }} className="collection-item flex flex-col items-center mr-4 shadow-lg hover:shadow-2xl hover:opacity-90 relative">
+    }} className="collection-item flex flex-col items-center mr-4 shadow-lg hover:shadow-2xl hover:opacity-90 relative mb-12">
       <div
         style={{
           backgroundImage: `url(${imageUrl})`,
