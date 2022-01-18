@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { SET_CURRENT_USER } from "./redux/user/userActions";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import CollectionOverview from "./pages/CollectionOverview";
 
 const App = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -56,6 +57,7 @@ const App = () => {
           render={() => (currentUser ? <Redirect to="/" /> : <SignIn />)}
         />
         <Route exact path="/checkout" component={Checkout} />
+        <Route exact path="/shop/:collection" component={CollectionOverview} />
       </Switch>
     </div>
   );
