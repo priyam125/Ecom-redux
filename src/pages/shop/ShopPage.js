@@ -13,7 +13,7 @@ const ShopPage = ({match, history}) => {
     // const [collections, setCollections] = useState(SHOP_DATA)
 
     return (
-        <div className='py-8 px-12'>
+        <div className='md:py-8 py-4 md:px-12 px-2'>
             {collections.map(({id, title, items, routeName}) => (
                 <CollectionPreview key={id} title={title} items={items} routeName={routeName} match={match} history={history}/>
             ))}

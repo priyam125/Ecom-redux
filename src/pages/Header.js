@@ -13,11 +13,11 @@ const Header = ({}) => {
   console.log(currentUser);
 
   return (
-    <div className="flex justify-between mb-6 w-full h-16 px-8">
+    <div className="flex justify-between mb-6 w-full h-16 md:px-8 px-2">
       <Link className="h-full w-16 p-6" to="/">
         <Logo className="logo" />
       </Link>
-      <div className="w-1/2 h-full flex items-center justify-end text-xl mt-4">
+      <div className="md:w-1/2 w-4/5 h-full flex items-center justify-end text-xl mt-4">
         <Link className="px-2 py-4" to="/shop">
           SHOP
         </Link>

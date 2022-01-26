@@ -27,6 +27,12 @@ code {
   height: 360px;
 }
 
+@media screen and (max-width: 640px) {
+  .item {
+    height: 240px;
+  }
+}
+
 .item:hover {
   cursor: pointer;
 
@@ -45,6 +51,12 @@ code {
 .collection-item {
   width: 22vw;
   height: 350px;
+}
+
+@media screen and (max-width: 640px) {
+  .collection-item {
+    width: 40vw;
+  }
 }
 
 
@@ -108,6 +120,14 @@ code {
     font-weight: bolder;
     cursor: pointer;
     display: none;
+}
+
+@media screen and (max-width: 640px) {
+  .add-to-cart-button {
+    display: block;
+    opacity: 0.7;
+    min-width: unset;
+  }
 }
 
 .collection-item:hover .add-to-cart-button{

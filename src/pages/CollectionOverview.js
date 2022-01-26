@@ -10,7 +10,7 @@ const CollectionOverview = ({ match, history }) => {
 
 
   return (
-    <div className="flex flex-col py-8 px-12">
+    <div className="flex flex-col ml-4 md:py-8 py-4 md:px-12 px-2">
       <div className="text-3xl mb-6">{match.params.collection}</div>
       <div className="flex flex-wrap items-center">
         {collections
