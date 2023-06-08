@@ -12,6 +12,8 @@ import { SET_CURRENT_USER } from "./redux/user/userActions";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import CollectionOverview from "./pages/CollectionOverview";
 
+//test
+
 const App = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
   console.log(currentUser);
